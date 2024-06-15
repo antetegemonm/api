@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client'
 import cors from 'cors'
 const prisma = new PrismaClient()
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 const app = express()
 app.use(express.json())
 app.use(cors())
@@ -69,7 +69,7 @@ app.put('/usuarios/:id' ,async (req, res)=>
      })
 
   
-app.listen(port)
+
 /*
 2- npx prisma studio para utilizar o prisma
 3- baixar thunder.client
