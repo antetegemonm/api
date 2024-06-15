@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client'
 import cors from 'cors'
 const prisma = new PrismaClient()
 
-
+const port = process.env.PORT || 3001;
 const app = express()
 app.use(express.json())
 app.use(cors())
@@ -68,7 +68,7 @@ app.put('/usuarios/:id' ,async (req, res)=>
           res.status(200).json({message:"usuário deletado com sucesso"})
      })
 
-     app.listen(3000)
+  
 
 /*
 2- npx prisma studio para utilizar o prisma
